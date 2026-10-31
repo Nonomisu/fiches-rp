@@ -2280,11 +2280,32 @@ window.showMood = (char, data) => {
     const li = document.createElement('li'); li.textContent = a; return li;
   }));
   actsEl.hidden = !(data.activities && data.activities.length);
-  metaEl.textContent = 'Mis à jour le ' + updated.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
+  metaEl.textContent = (data.place ? data.place + ' · ' : '') + 'Mis à jour le ' + updated.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
   metaEl.hidden = false;
 };
 // En attendant l'application : aucune donnée, donc « À définir ».
 ['eoor', 'unegen', 'tamachag', 'khokkutsai', 'ankhbayar', 'tengis', 'davaajav', 'viggo', 'echo'].forEach(c => window.showMood(c, null));
+// Lecture de l'encart public depuis l'appli « Journée RP » (Firestore, collection today, lecture seule).
+(async () => {
+  const URL = 'https://firestore.googleapis.com/v1/projects/journal-rp/databases/(default)/documents/today'
+            + '?key=AIzaSyB1AvFflrrq8qiCAH81fVVy6PJYS0RW5vw&pageSize=100';
+  const val = v => !v ? undefined
+    : 'stringValue' in v ? v.stringValue
+    : 'timestampValue' in v ? v.timestampValue
+    : 'arrayValue' in v ? (v.arrayValue.values || []).map(val)
+    : 'integerValue' in v ? Number(v.integerValue)
+    : undefined;
+  try {
+    const res = await fetch(URL);
+    if (!res.ok) return;
+    const json = await res.json();
+    (json.documents || []).forEach(d => {
+      const id = d.name.split('/').pop();
+      const f = d.fields || {};
+      window.showMood(id, { mood: val(f.mood) || '', activities: val(f.activities) || [], place: val(f.place) || '', updatedAt: val(f.updatedAt) });
+    });
+  } catch (_) { /* hors ligne ou page de prévisualisation : l'encart reste sur « À définir » */ }
+})();
 </script>
 
 <script>
