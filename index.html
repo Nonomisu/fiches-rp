@@ -2280,11 +2280,8 @@ window.showMood = (char, data) => {
   }
   moodEl.textContent = '« ' + data.mood + ' »';
   moodEl.classList.remove('todo');
-  actsEl.replaceChildren(...(data.activities || []).map(a => {
-    const li = document.createElement('li'); li.textContent = a; return li;
-  }));
-  actsEl.hidden = !(data.activities && data.activities.length);
-  metaEl.textContent = (data.place ? data.place + ' · ' : '') + 'Mis à jour le ' + updated.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
+  actsEl.hidden = true;   // seules l'humeur et la date sont affichées
+  metaEl.textContent = 'Mis à jour le ' + updated.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
   metaEl.hidden = false;
 };
 // En attendant l'application : aucune donnée, donc « À définir ».
