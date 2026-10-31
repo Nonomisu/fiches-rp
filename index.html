@@ -3,10 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fiches RP</title>
-<meta name="description" content="Fiches de présentation RP de personnages de Final Fantasy XIV.">
-<meta property="og:title" content="Fiches RP">
-<meta property="og:description" content="Fiches de présentation RP de personnages de Final Fantasy XIV.">
+<title>Personnages Nono</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="description" content="Fiches de présentation des personnages RP de Nono sur Final Fantasy XIV.">
+<meta property="og:title" content="Personnages Nono">
+<meta property="og:description" content="Fiches de présentation des personnages RP de Nono sur Final Fantasy XIV.">
+<meta property="og:image" content="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700;800&family=Chakra+Petch:wght@500;600;700&family=Josefin+Sans:wght@500;600;700&family=Germania+One&family=Cinzel:wght@500;700&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap">
@@ -2224,7 +2228,7 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
       if (a.dataset.char === id) a.setAttribute('aria-current', 'page');
       else a.removeAttribute('aria-current');
     });
-    document.title = chars[id];
+    document.title = 'Personnages Nono';
     const cur = document.querySelector('.cast a[aria-current="page"]');
     const bar = document.querySelector('.cast ul');
     if (cur && bar) bar.scrollTo({ left: cur.parentElement.offsetLeft - (bar.clientWidth - cur.parentElement.offsetWidth) / 2 });
