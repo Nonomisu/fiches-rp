@@ -1,0 +1,2322 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiches RP</title>
+<meta name="description" content="Fiches de présentation RP de personnages de Final Fantasy XIV.">
+<meta property="og:title" content="Fiches RP">
+<meta property="og:description" content="Fiches de présentation RP de personnages de Final Fantasy XIV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700;800&family=Chakra+Petch:wght@500;600;700&family=Josefin+Sans:wght@500;600;700&family=Germania+One&family=Cinzel:wght@500;700&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+/* Layout : bandeau de pierre sombre avec le nom gravé, puis une colonne de lecture.
+   Ambiance : Ala Mhigo, cramoisi, or patiné, grès des hauts plateaux de Gyr Abania. */
+:root {
+  --stone: #1c1412;        /* fond : pierre brûlée */
+  --stone-2: #261a17;      /* surfaces légèrement relevées */
+  --crimson: #8e1f22;      /* rouge ala-mhigois */
+  --gold: #c9a45c;         /* or patiné */
+  --sand: #e9dcc4;         /* texte : grès clair */
+  --sand-dim: #a8977d;     /* texte secondaire */
+  --rule: rgba(201,164,92,.28);
+  --display: "Cinzel", "Trajan Pro", "Times New Roman", serif;
+  --body: "Spectral", Georgia, "Times New Roman", serif;
+  --bar: rgba(14,11,10,.92);
+  --glow: rgba(142,31,34,.45);
+  --name-glow: rgba(142,31,34,.6);
+  --heart: #c2414a;
+  --minus: #d07a86;
+  color-scheme: dark;
+}
+/* Tamachag : couleurs de l'emblème des Khurdans. Nuit bleu ardoise, indigo du
+   tissu, brun du cuir, liseré cuivré, beige des tracés clairs. */
+:root.t-tamachag {
+  --stone: #111a2a;        /* fond : nuit bleu ardoise */
+  --stone-2: #172338;      /* surfaces */
+  --crimson: #b9785a;      /* liseré cuivré */
+  --gold: #c9ae8f;         /* beige des tracés */
+  --sand: #ece3d6;         /* texte clair */
+  --sand-dim: #a2988c;     /* texte secondaire */
+  --rule: rgba(201,174,143,.26);
+  --display: "Alegreya SC", "Cinzel", Georgia, serif;
+  --bar: rgba(9,14,24,.92);
+  --glow: rgba(38,46,140,.6);   /* indigo du fanion */
+  --name-glow: rgba(60,70,180,.55);
+  --minus: #d08a6e;
+}
+/* Davaajav : tribu des Kha, noir et rouge. Même construction que les Khurdans,
+   mais un noir charbon au lieu du bleu ardoise, et le rouge en accent. */
+:root.t-kha {
+  --stone: #111012;        /* fond : noir charbon */
+  --stone-2: #1b191c;      /* surfaces */
+  --crimson: #8f1d1d;      /* rouge sombre : soulignements */
+  --gold: #d0483d;         /* rouge vif : titres et accents */
+  --sand: #eee7e2;         /* texte : os clair */
+  --sand-dim: #a39893;     /* texte secondaire */
+  --rule: rgba(208,72,61,.26);
+  --bar: rgba(8,7,8,.92);
+  --glow: rgba(150,22,22,.5);
+  --name-glow: rgba(190,30,30,.5);
+  --minus: #e07a6e;
+}
+/* Echo : Solution Nine, néon cyan. Nuit bleu-noir, enseignes lumineuses. */
+:root.t-echo {
+  --stone: #0a0e19;        /* fond : nuit bleu-noir */
+  --stone-2: #111a2c;      /* surfaces */
+  --crimson: #c2338f;      /* magenta : accent secondaire */
+  --gold: #2fe3d3;         /* cyan néon : titres et accents */
+  --sand: #e6f4f6;         /* texte */
+  --sand-dim: #8aa0b2;     /* texte secondaire */
+  --rule: rgba(47,227,211,.28);
+  --display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --bar: rgba(6,9,17,.92);
+  --glow: rgba(47,227,211,.16);
+  --name-glow: rgba(47,227,211,.55);
+  --heart: #c2338f;
+  --minus: #e05aa8;
+}
+/* Viggo : inspiration des arts amérindiens du Sud-Ouest. Terre sombre, turquoise,
+   ocre rouge et peau tannée ; motifs géométriques en marches et losanges. */
+:root.t-viggo {
+  --stone: #17120e;        /* fond : terre sombre */
+  --stone-2: #221a14;      /* surfaces */
+  --crimson: #c4572e;      /* ocre rouge */
+  --gold: #3fb8a8;         /* turquoise : titres et accents */
+  --sand: #f0e6d6;         /* texte : os clair */
+  --sand-dim: #a8977f;     /* texte secondaire : peau tannée */
+  --rule: rgba(196,87,46,.32);
+  --display: "Josefin Sans", "Segoe UI", system-ui, sans-serif;
+  --bar: rgba(12,9,7,.92);
+  --glow: rgba(196,87,46,.28);
+  --name-glow: rgba(196,87,46,.45);
+  --heart: #d0573a;
+  --minus: #e07a5a;
+}
+/* Unegen : viking et nordique. Fjord et aurore boréale : bleu nuit, glace, bronze. */
+:root.t-unegen {
+  --stone: #0b1118;        /* fond : nuit du fjord */
+  --stone-2: #121b25;      /* surfaces */
+  --crimson: #c79a4a;      /* bronze : accent secondaire */
+  --gold: #a9d4e6;         /* glace : titres et accents */
+  --sand: #e9e6df;         /* texte */
+  --sand-dim: #95a1ad;     /* texte secondaire */
+  --rule: rgba(169,212,230,.22);
+  --display: "Germania One", "Cinzel", Georgia, serif;
+  --bar: rgba(7,11,16,.94);
+  --glow: rgba(63,209,160,.22);
+  --name-glow: rgba(110,220,190,.35);
+  --heart: #d9604a;
+  --minus: #e08a6a;
+}
+* { box-sizing: border-box; }
+html { background: var(--stone); }
+body {
+  margin: 0;
+  background: var(--stone);
+  color: var(--sand);
+  font: 400 1.0625rem/1.65 var(--body);
+  padding-inline: 16px;
+  padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+}
+
+/* ---------- Barre des personnages (commune à toutes les fiches) ---------- */
+.cast {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  margin-inline: -16px;
+  background: var(--bar);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+}
+.cast ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 80rem;
+  display: flex;
+  justify-content: safe center;
+  gap: .25rem 1.4rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.cast li { flex: none; }
+.cast a, .cast-soon {
+  display: block;
+  padding: .8rem .1rem .7rem;
+  font-size: .82rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.cast-eoor { font-family: "Cinzel", serif; font-weight: 700; color: var(--sand-dim); }
+.cast-tamachag { font-family: "Alegreya SC", serif; font-weight: 800; color: var(--sand-dim); letter-spacing: .1em; }
+.cast a[aria-current="page"] { color: var(--gold); border-bottom-color: var(--crimson); }
+.cast a[aria-current="page"] span { color: var(--crimson); }
+.cast a:hover { color: var(--sand); }
+.cast a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.cast-soon { color: var(--sand-dim); opacity: .55; font-family: var(--body); font-style: italic; text-transform: none; letter-spacing: .02em; font-size: .9rem; }
+.cast-soon small { font-size: .78em; }
+@media (max-width: 30rem) { .cast ul { justify-content: flex-start; } }
+
+/* ---------- En-tête ---------- */
+.hero {
+  position: relative;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding-block: clamp(3.5rem, 10vw, 7rem) clamp(2.5rem, 7vw, 4.5rem);
+  text-align: center;
+  isolation: isolate;
+}
+.hero::before {
+  /* lueur cramoisie derrière le nom, comme une bannière au vent */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 55% 60% at 50% 45%, var(--glow), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(233,220,196,.025) 0 2px, transparent 2px 5px);
+}
+.origin {
+  margin: 0 0 1.25rem;
+  font: 500 .78rem/1 var(--display);
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+h1 {
+  margin: 0;
+  font: 700 clamp(2.4rem, 9vw, 5.25rem)/1.02 var(--display);
+  letter-spacing: .06em;
+  text-wrap: balance;
+  color: var(--sand);
+  text-shadow: 0 2px 0 rgba(0,0,0,.55), 0 0 32px var(--name-glow);
+}
+h1 .surname { display: block; color: var(--gold); font-size: .62em; letter-spacing: .14em; margin-top: .25em; }
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .9rem;
+  margin: 1.75rem auto 0;
+  max-width: 22rem;
+}
+.ornament span { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.ornament span:last-child { background: linear-gradient(270deg, transparent, var(--gold)); }
+.ornament svg { width: 22px; height: 22px; flex: none; }
+
+.epithet {
+  margin: 1.5rem auto 0;
+  max-width: 34rem;
+  font-style: italic;
+  color: var(--sand-dim);
+}
+
+/* ---------- Corps ---------- */
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-block: 1rem 5rem;
+  display: grid;
+  gap: 3rem;
+}
+section { display: grid; gap: .9rem; }
+h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font: 500 1.05rem/1.2 var(--display);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.facts div { background: var(--stone-2); padding: .8rem 1rem; min-width: 0; }
+.facts dt {
+  font: 500 .7rem/1 var(--display);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--sand-dim);
+  margin-bottom: .4rem;
+}
+.facts dd { margin: 0; }
+.facts dd small { display: block; margin-top: .15rem; font-size: .85rem; font-style: italic; color: var(--sand-dim); }
+.facts dd sup { font-size: .7em; line-height: 0; }
+
+.todo { color: var(--sand-dim); font-style: italic; }
+
+/* Portrait + identité côte à côte, empilés sur téléphone */
+.identity {
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.identity-text { display: grid; gap: .9rem; min-width: 0; }
+.identity .facts { grid-template-columns: 1fr; }
+@media (max-width: 40rem) {
+  .identity { grid-template-columns: 1fr; }
+  .portrait-col { max-width: 18rem; justify-self: center; width: 100%; }
+}
+.portrait {
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  max-width: 100%;
+  border: 1px solid var(--gold);
+  padding: 6px;
+  background: var(--stone-2);
+  box-shadow: 0 0 0 4px var(--stone), 0 0 0 5px var(--rule), 0 12px 30px rgba(0,0,0,.45);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block; }
+.portrait-col { display: grid; gap: .6rem; min-width: 0; }
+.portrait.bare { border: 0; padding: 0; background: none; box-shadow: none; }
+.credit a { color: var(--gold); text-decoration-color: var(--rule); text-underline-offset: .2em; }
+.credit a:hover { text-decoration-color: currentColor; }
+.credit { margin: 0; text-align: center; font-size: .78rem; letter-spacing: .04em; color: var(--sand-dim); }
+.portrait-empty {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: .6rem;
+  border: 1px dashed var(--rule);
+  color: var(--sand-dim);
+  font-style: italic;
+  font-size: .9rem;
+  text-align: center;
+  padding: 1rem;
+}
+.portrait-empty svg { width: 34px; height: 34px; color: var(--gold); opacity: .7; }
+
+/* Sous-catégories (relations, et réutilisable ailleurs) */
+.subgroups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem 2rem;
+}
+.subgroup { display: grid; gap: .5rem; align-content: start; min-width: 0; }
+.subgroup.wide { grid-column: 1 / -1; }
+.subgroup h3 { padding-bottom: .45rem; border-bottom: 1px solid var(--rule); }
+.people { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.people strong { display: block; font-weight: 500; color: var(--sand); }
+.people small { display: block; font-size: .9rem; color: var(--sand-dim); }
+.broken { width: 1em; height: 1em; vertical-align: -.12em; margin-right: .1em; fill: var(--heart, #c2414a); }
+.heart { color: var(--heart); margin-right: .15em; }
+.die { color: var(--gold); margin-right: .15em; font-size: 1.15em; line-height: 1; }
+.monk { width: 1.45em; height: 1.45em; vertical-align: -.3em; margin-right: .15em; color: var(--gold); }
+.iris { width: 1.3em; height: 1.3em; vertical-align: -.25em; margin-right: .1em; }
+
+/* Galerie : vignettes 16:9, agrandies au clic */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: .75rem;
+}
+.gallery a, .shot-empty {
+  display: block;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  border: 1px solid var(--rule);
+  background: var(--stone-2);
+  overflow: hidden;
+}
+.gallery img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .4s ease, filter .4s ease;
+  filter: saturate(.9);
+}
+.gallery a:hover img, .gallery a:focus-visible img { transform: scale(1.04); filter: none; }
+.gallery a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.shot-empty {
+  display: grid; place-content: center;
+  border-style: dashed;
+  color: var(--sand-dim); font-style: italic; font-size: .9rem;
+}
+#lightbox {
+  border: 1px solid var(--gold);
+  padding: 0;
+  background: var(--stone);
+  max-width: min(96vw, 1400px);
+  max-height: 92vh;
+  overflow: visible;
+}
+#lightbox::backdrop { background: rgba(10,6,5,.88); }
+#lightbox img { display: block; max-width: min(96vw, 1400px); max-height: 92vh; object-fit: contain; }
+#lightbox button {
+  position: absolute;
+  background: var(--stone);
+  color: var(--gold);
+  border: 1px solid var(--rule);
+  font: 400 1.6rem/1 var(--display);
+  width: 2.5rem; height: 2.5rem;
+  cursor: pointer;
+}
+#lightbox button:focus-visible { outline: 2px solid var(--gold); }
+.lb-close { top: .5rem; right: .5rem; }
+.lb-prev { left: .5rem; top: 50%; transform: translateY(-50%); }
+.lb-next { right: .5rem; top: 50%; transform: translateY(-50%); }
+@media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } }
+
+/* Fiche de jeu */
+.sheet {
+  border: 1px solid var(--rule);
+  background: var(--stone-2);
+}
+.sheet summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  padding: 1.1rem 1.5rem;
+}
+.sheet summary::-webkit-details-marker { display: none; }
+.sheet summary::before {
+  content: "";
+  width: .55rem;
+  height: .55rem;
+  border-right: 1.5px solid var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  transform: rotate(-45deg);
+  transition: transform .2s ease;
+  flex: none;
+}
+.sheet[open] summary::before { transform: rotate(45deg); }
+.sheet summary:hover .summary-title { color: var(--sand); }
+.sheet summary:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.summary-title {
+  font: 500 1.05rem/1.2 var(--display);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.summary-hint { margin-left: auto; font-size: .85rem; font-style: italic; color: var(--sand-dim); }
+.sheet[open] .summary-hint { display: none; }
+.sheet-body {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
+}
+@media (prefers-reduced-motion: reduce) { .sheet summary::before { transition: none; } }
+.sheet-block { display: grid; gap: .7rem; min-width: 0; }
+h3 {
+  margin: 0;
+  font: 500 .78rem/1 var(--display);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+h3.plus::before { content: "+ "; color: var(--gold); }
+h3.minus::before { content: "− "; color: var(--minus); }
+/* Statistiques : une ligne par caractéristique, points de conduite jusqu'à la valeur */
+.stats { margin: 0; display: grid; gap: .15rem; }
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  padding-block: .35rem;
+}
+.stat::after { content: none; }
+.stat dt {
+  order: 1;
+  font: 500 .82rem/1.2 var(--display);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+.stat::before {
+  content: "";
+  order: 2;
+  flex: 1;
+  border-bottom: 1px dotted var(--rule);
+  transform: translateY(-.25em);
+}
+.stat dd {
+  order: 3;
+  margin: 0;
+  min-width: 2.5ch;
+  text-align: right;
+  font: 700 1.25rem/1 var(--display);
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+}
+.stat dd.todo { color: var(--sand-dim); font-weight: 500; }
+.mods { display: grid; gap: 1.5rem; }
+.mods ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .6rem; }
+.mods li::marker { color: var(--gold); }
+p { margin: 0; }
+
+footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-block: 1.5rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-size: .85rem;
+  color: var(--sand-dim);
+}
+a { color: var(--gold); }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+
+
+/* Fiche de jeu : détails des lignes */
+.sw { display: inline-block; width: .55rem; height: .55rem; margin-right: .55rem; background: var(--c); vertical-align: .08em; }
+.stat dd small { display: inline; margin-left: .45rem; font: 400 .8rem/1 var(--body); color: var(--sand-dim); letter-spacing: 0; }
+.stats.rows dt { font: 500 1rem/1.3 var(--body); letter-spacing: 0; text-transform: none; min-width: 0; }
+.stats.rows dt small { display: block; margin-top: .15rem; font: 400 .72rem/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--sand-dim); }
+.stats.rows .stat { align-items: center; }
+.stats.rows .stat::before { transform: none; }
+.stat dd.rank { font: 500 .8rem/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.mods ul.tagged { list-style: none; padding-left: 0; gap: .8rem; }
+.tagged li { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: .75rem; align-items: baseline; }
+.tag { font: 700 .95rem/1 var(--display); font-variant-numeric: tabular-nums; text-align: right; }
+.plus-tag { color: var(--gold); }
+.minus-tag { color: var(--minus); }
+
+/* Identité : le titre au-dessus, puis l'illustration et le bloc alignés haut et bas */
+.identity {
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  grid-template-areas: "title title" "img facts" "credit .";
+  column-gap: 1.5rem;
+  row-gap: .9rem;
+  align-items: stretch;
+}
+.identity .portrait-col, .identity .identity-text { display: contents; }
+.identity h2 { grid-area: title; }
+.identity .portrait { grid-area: img; height: 100%; }
+.identity .credit { grid-area: credit; margin-top: -.35rem; }
+.identity .facts { grid-area: facts; grid-auto-rows: 1fr; }
+.identity .facts div { display: flex; flex-direction: column; justify-content: center; }
+@media (max-width: 40rem) {
+  .identity { grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "img" "credit" "facts"; }
+  .identity .portrait { height: auto; width: 100%; max-width: 18rem; justify-self: center; }
+  .identity .facts { grid-auto-rows: auto; }
+}
+
+
+/* Mood du jour (alimenté plus tard par l'application) */
+.today {
+  margin: 2rem auto 0;
+  max-width: 30rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  gap: .45rem;
+  justify-items: center;
+}
+.today p { margin: 0; }
+.today-label {
+  font: 500 .7rem/1 var(--display);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.today-mood { font-style: italic; color: var(--sand); }
+.today-mood.todo { color: var(--sand-dim); font-size: .92rem; }
+.today-acts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem .9rem; font-size: .85rem; color: var(--sand-dim); }
+.today-meta { font-size: .75rem; color: var(--sand-dim); opacity: .8; }
+
+
+/* Tamachag : Alegreya SC dessine plus petit que Cinzel (petites capitales ~20 % plus
+   basses, capitales ~8 % plus basses). On compense pour garder le même gabarit. */
+.t-tamachag h1 { font-size: clamp(2.7rem, 10.1vw, 5.9rem); }
+.t-tamachag h2, .t-tamachag .summary-title { font-size: 1.13rem; }
+.t-tamachag .facts dt, .t-tamachag .today-label { font-size: .76rem; }
+.t-tamachag h3 { font-size: .84rem; }
+.t-tamachag .stat dt { font-size: .89rem; }
+.t-tamachag .stat dd { font-size: 1.35rem; }
+.t-tamachag .stats.rows dt small { font-size: .78rem; }
+.t-tamachag .stat dd.rank { font-size: .86rem; }
+.t-tamachag .tag { font-size: 1.03rem; }
+.cast-tamachag { font-size: .89rem !important; }
+
+
+/* Galerie en carrousel : 3 images visibles, défilement horizontal */
+.carousel { display: grid; gap: .75rem; min-width: 0; }
+.carousel .gallery {
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2 * .75rem) / 3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.carousel .gallery::-webkit-scrollbar { display: none; }
+.carousel .gallery > * { scroll-snap-align: start; }
+.carousel .gallery:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+@media (max-width: 40rem) {
+  .carousel .gallery { grid-auto-columns: 86%; }
+}
+.car-ctrl { display: flex; align-items: center; justify-content: center; gap: .75rem; }
+.car-btn {
+  width: 2.4rem; height: 2.4rem;
+  display: grid; place-items: center;
+  background: var(--stone-2);
+  color: var(--gold);
+  border: 1px solid var(--rule);
+  font: 400 1.5rem/1 var(--display);
+  cursor: pointer;
+}
+.car-btn:hover:not(:disabled) { border-color: var(--gold); }
+.car-btn:disabled { opacity: .35; cursor: default; }
+.car-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.car-count { min-width: 5.5rem; text-align: center; font-size: .85rem; color: var(--sand-dim); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .carousel .gallery { scroll-behavior: auto; } }
+
+
+/* Encart des valeurs générales (PV, destin, équipement) */
+.vitals { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.vitals li { background: var(--stone); padding: .6rem .8rem; display: grid; gap: .25rem; min-width: 0; }
+.vitals span { font: 500 .7rem/1.2 var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--sand-dim); }
+.vitals b { font: 700 1.15rem/1.1 var(--display); color: var(--gold); }
+.vitals b.todo { color: var(--sand-dim); font-weight: 500; font-style: normal; }
+@media (max-width: 30rem) { .vitals { grid-template-columns: minmax(0, 1fr); } .vitals li { grid-template-columns: 1fr auto; align-items: baseline; } }
+.wicon { width: 1.6em; height: 1.6em; vertical-align: -.45em; margin-right: .45rem; color: var(--gold); }
+.mod-name { font-weight: 600; color: var(--sand); }
+
+
+/* Icône à gauche, nom et niveau alignés à sa droite */
+.stats.rows dt:has(> .wicon):has(> small) { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: .55rem; align-items: center; }
+.stats.rows dt:has(> small) > .wicon { grid-row: span 2; margin: 0; vertical-align: 0; }
+.stats.rows dt:has(> .wicon) small { grid-column: 2; }
+
+
+.paw { width: 1.4em; height: 1.4em; vertical-align: -.3em; margin-right: .15em; fill: var(--gold); }
+.people.companions { display: flex; flex-wrap: wrap; gap: .75rem 2.5rem; }
+.people.companions small { padding-left: 1.65em; }
+
+
+/* Mood musical : lien vers une vidéo YouTube */
+.music { margin: 1.25rem auto 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .35rem .8rem; font-size: .92rem; }
+.music-label { display: inline-flex; align-items: center; gap: .4rem; font: 500 .7rem/1 var(--display); letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+.music-label svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
+.music a { display: inline-flex; align-items: center; gap: .45rem; padding: .35rem .8rem; border: 1px solid var(--rule); color: var(--sand); text-decoration: none; font-style: italic; transition: border-color .2s ease; }
+.music a::before { content: "▶"; font-style: normal; font-size: .7em; color: var(--gold); }
+.music a:hover, .music a:focus-visible { border-color: var(--gold); }
+.music-link.todo { font-size: .85rem; }
+
+
+/* Echo : halo néon, lettres espacées, glyphe ◈ */
+.t-echo h1 { font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #e6f4f6;
+  text-shadow: 0 0 6px #2fe3d3, 0 0 22px rgba(47,227,211,.55); }
+.t-echo h2, .t-echo h3, .t-echo .summary-title, .t-echo .facts dt, .t-echo .today-label, .t-echo .stat dt, .t-echo .music-label { letter-spacing: .26em; }
+.t-echo .hero::before {
+  background:
+    radial-gradient(ellipse 50% 55% at 50% 42%, rgba(47,227,211,.18), transparent 70%),
+    radial-gradient(ellipse 30% 30% at 72% 70%, rgba(194,51,143,.18), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(47,227,211,.03) 0 1px, transparent 1px 4px);
+}
+.glyph { font-weight: 400; font-size: 1.4rem; line-height: 1; color: var(--gold); text-shadow: 0 0 6px #2fe3d3, 0 0 14px rgba(47,227,211,.5); }
+.t-echo .music a { border-color: #c2338f; box-shadow: 0 0 10px rgba(194,51,143,.35); }
+.t-echo .music a::before { color: #c2338f; }
+.cast-echo { font-family: "Chakra Petch", sans-serif; font-weight: 600; color: var(--sand-dim); letter-spacing: .2em; }
+
+
+/* Viggo : titres géométriques espacés, frise en losanges */
+.t-viggo h1 { font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+.t-viggo h2, .t-viggo .summary-title { letter-spacing: .3em; font-weight: 600; }
+.t-viggo .hero::before {
+  background:
+    radial-gradient(ellipse 55% 60% at 50% 45%, rgba(196,87,46,.26), transparent 70%),
+    linear-gradient(135deg, transparent 46%, rgba(63,184,168,.05) 46% 54%, transparent 54%) 0 0 / 28px 28px,
+    linear-gradient(45deg, transparent 46%, rgba(196,87,46,.05) 46% 54%, transparent 54%) 0 0 / 28px 28px;
+}
+.ornament svg.band { width: 96px; height: 22px; flex: none; }
+.t-viggo h2::after { background: repeating-linear-gradient(90deg, var(--crimson) 0 10px, transparent 10px 14px, var(--gold) 14px 18px, transparent 18px 22px); height: 2px; opacity: .55; }
+.cast-viggo { font-family: "Josefin Sans", sans-serif; font-weight: 700; color: var(--sand-dim); letter-spacing: .2em; }
+
+
+/* Unegen : aurore boréale, entrelacs de glace, corde tressée */
+.t-unegen h1 { font-weight: 400; letter-spacing: .06em; text-shadow: 0 2px 0 rgba(0,0,0,.6), 0 0 28px rgba(110,220,190,.35); }
+.t-unegen h1 .surname { color: #c79a4a; font-size: .45em; letter-spacing: .2em; }
+.t-unegen h2, .t-unegen .summary-title { font-weight: 400; letter-spacing: .14em; }
+.t-unegen h2::after { height: 4px; opacity: .55; background:
+  repeating-linear-gradient(135deg, #c79a4a 0 3px, transparent 3px 6px),
+  repeating-linear-gradient(45deg, rgba(169,212,230,.7) 0 3px, transparent 3px 6px); }
+.t-unegen .hero::before {
+  border-radius: 10px;
+  background:
+    radial-gradient(ellipse 45% 50% at 22% 18%, rgba(63,209,160,.22), transparent 70%),
+    radial-gradient(ellipse 45% 50% at 80% 15%, rgba(122,107,224,.2), transparent 70%),
+    radial-gradient(ellipse 70% 35% at 50% 100%, rgba(200,220,235,.05), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23a9d4e6' stroke-opacity='.05' stroke-width='2'%3E%3Cpath d='M0 20c10-12 30-12 40 0M0 20c10 12 30 12 40 0'/%3E%3Cpath d='M20 0c-12 10-12 30 0 40M20 0c12 10 12 30 0 40'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 40px 40px;
+}
+.t-unegen .ornament span { display: none; }
+.t-unegen .ornament svg.band { width: min(240px, 100%); height: 26px; }
+.cast-unegen { font-family: "Germania One", serif; font-weight: 400; color: var(--sand-dim); letter-spacing: .12em; }
+
+/* Une seule fiche visible à la fois */
+.fiche[hidden] { display: none !important; }
+.t-tamachag h1 { font-weight: 700; letter-spacing: .04em; }
+.t-tamachag h1 .surname { font-weight: 700; }
+.ornament .tri { width: 34px; height: 22px; }
+</style>
+</head>
+<body>
+<nav class="cast" aria-label="Personnages">
+  <ul>
+    <li><a href="#eoor" class="cast-eoor" data-char="eoor"><span aria-hidden="true">◆</span> Eoor</a></li>
+    <li><a href="#unegen" class="cast-unegen" data-char="unegen"><span aria-hidden="true">ᚢ</span> Unegen</a></li>
+    <li><a href="#tamachag" class="cast-tamachag" data-char="tamachag"><span aria-hidden="true">▼</span> Tamachag</a></li>
+    <li><a href="#khokkutsai" class="cast-tamachag" data-char="khokkutsai"><span aria-hidden="true">▼</span> Khokkutsai</a></li>
+    <li><a href="#ankhbayar" class="cast-tamachag" data-char="ankhbayar"><span aria-hidden="true">▼</span> Ankhbayar</a></li>
+    <li><a href="#tengis" class="cast-tamachag" data-char="tengis"><span aria-hidden="true">▼</span> Tengis</a></li>
+    <li><a href="#davaajav" class="cast-tamachag" data-char="davaajav"><span aria-hidden="true">▼</span> Davaajav</a></li>
+    <li><a href="#viggo" class="cast-viggo" data-char="viggo"><span aria-hidden="true">▲</span> Viggo</a></li>
+    <li><a href="#echo" class="cast-echo" data-char="echo"><span aria-hidden="true">◈</span> Echo</a></li>
+  </ul>
+</nav>
+
+<div class="fiche" data-char="eoor">
+<header class="hero">
+  <h1>Eoor <span class="surname">Silvershard</span></h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <svg viewBox="0 0 24 24"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z" fill="#c9a45c"/><circle cx="12" cy="12" r="2.2" fill="#8e1f22"/></svg>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation d'Eoor viendra ici.</p>
+  <aside class="today" data-mood="eoor" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><span class="music-link todo">Lien à venir</span></p>
+</header>
+
+<main>
+  <section id="identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait bare">
+        <img src="eoor-portrait.jpg" alt="Portrait illustré d'Eoor Silvershard">
+      </figure>
+      <p class="credit"><em>Illustration by <a href="https://vgen.co/DCyann" target="_blank" rel="noopener">DCyann</a></em></p>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd>Hyurgoth</dd></div>
+        <div><dt>Âge</dt><dd><span class="age" data-born="1987-09-29">39</span> ans<small>Né le 29<sup>e</sup> soleil de la 5<sup>e</sup> lune astrale</small></dd></div>
+        <div><dt>Origine</dt><dd>Ala Mhigo · Werlyt</dd></div>
+        <div><dt>Métier</dt><dd>Émissaire de la République de Werlyt<br>Co-responsable des ouvrages du Grand Bazar</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people">
+          <li><strong>Pratique quotidienne de la méditation</strong><small>Héritée de la tradition des moines d'Ala Mhigo et du culte de Rhalgr</small></li>
+          <li><strong>Mécanicien passionné, amoureux des motos</strong><small>Fier détenteur de plusieurs modèles qu'il bricole et entretient sur son temps libre</small></li>
+          <li><strong>Engagé auprès de l'association « Un vœu pour les enfants »</strong><small>Aide les enfants malades ou en situation précaire à réaliser leurs rêves</small></li>
+        </ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people">
+          <li><strong>Le Grand Bazar</strong><small>Tous les jours et soirs de la semaine</small></li>
+          <li><strong>Gridania</strong><small>Plusieurs fois par semaine</small></li>
+          <li><strong>Ala Mhigo</strong><small>Une fois toutes les deux semaines (les mercredis)</small></li>
+          <li><strong>Rocasternes</strong><small>Une fois toutes les deux semaines (les lundis)</small></li>
+        </ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li><strong><span class="heart" aria-hidden="true">♥</span> Yasmeen Al'Iksir</strong><small>Partenaire</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li><strong><span class="die" aria-hidden="true">⚄</span> Cillien Teraban</strong><small>Bro du Bazar</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b>8</b></li>
+      <li><span>Points de destin</span><b class="todo">—</b></li>
+      <li><span>Équipement</span><b class="todo">—</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd>+150<small>3 pts</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd>+150<small>3 pts</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd>+50<small>1 pt</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd>+100<small>2 pts</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd>+50<small>1 pt</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd>+50<small>1 pt</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd>+100<small>2 pts</small></dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <dl class="stats rows">
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="10.6" width="10" height="2.8" rx="1" fill="currentColor"/><rect x="3.4" y="6.5" width="3.6" height="11" rx="1.2" fill="currentColor"/><rect x="17" y="6.5" width="3.6" height="11" rx="1.2" fill="currentColor"/><rect x="1.4" y="9" width="2" height="6" rx=".8" fill="currentColor"/><rect x="20.6" y="9" width="2" height="6" rx=".8" fill="currentColor"/></svg>Athlétisme<small>Spécialiste · 3 pts</small></dt><dd>+500</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.3" r="2.4" fill="currentColor"/><path d="M8.8 8.2h6.4l-.6 8.4H9.4Z" fill="currentColor"/><path d="M9.4 8.8C7.6 10.6 6.5 13.2 5.6 15.9M14.6 8.8c1.8 1.8 2.9 4.4 3.8 7.1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.2 17.4c3.6-2.6 7.7-2.3 11.6.6-4 1.9-8 1.8-11.6-.6Z" fill="currentColor"/><path d="M21.8 17.4c-3.6-2.6-7.7-2.3-11.6.6 4 1.9 8 1.8 11.6-.6Z" fill="currentColor" style="stroke:var(--stone);stroke-width:.9"/><circle cx="5.5" cy="16.2" r="1.15" fill="currentColor"/><circle cx="18.5" cy="16.2" r="1.15" fill="currentColor"/></svg>Méditation et concentration<small>Spécialiste · 3 pts</small></dt><dd>+500</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><rect x="10.6" y="1.6" width="2.8" height="4.2" rx=".6" fill="currentColor" transform="rotate(0 12 12)"/><rect x="10.6" y="1.6" width="2.8" height="4.2" rx=".6" fill="currentColor" transform="rotate(45 12 12)"/><rect x="10.6" y="1.6" width="2.8" height="4.2" rx=".6" fill="currentColor" transform="rotate(90 12 12)"/><rect x="10.6" y="1.6" width="2.8" height="4.2" rx=".6" fill="currentColor" transform="rotate(135 12 12)"/><rect x="10.6" y="1.6" width="2.8" height="4.2" rx=".6" fill="currentColor" transform="rotate(180 12 12)"/><rect x="10.6" y="1.6" width="2.8" height="4.2" rx=".6" fill="currentColor" transform="rotate(225 12 12)"/><rect x="10.6" y="1.6" width="2.8" height="4.2" rx=".6" fill="currentColor" transform="rotate(270 12 12)"/><rect x="10.6" y="1.6" width="2.8" height="4.2" rx=".6" fill="currentColor" transform="rotate(315 12 12)"/><circle cx="12" cy="12" r="7" fill="currentColor"/><circle cx="12" cy="12" r="2.8" style="fill:var(--stone-2)"/></svg>Mécanique (magitek)<small>Amateur · 2 pts</small></dt><dd>+300</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="9.5" cy="18.4" rx="6.5" ry="2.4" fill="currentColor"/><ellipse cx="9.5" cy="15.2" rx="6.5" ry="2.4" fill="currentColor" style="stroke:var(--stone-2)" stroke-width=".9"/><ellipse cx="9.5" cy="12" rx="6.5" ry="2.4" fill="currentColor" style="stroke:var(--stone-2)" stroke-width=".9"/><circle cx="17.6" cy="7.4" r="4.6" fill="currentColor" style="stroke:var(--stone-2)" stroke-width=".9"/><circle cx="17.6" cy="7.4" r="2.4" fill="none" style="stroke:var(--stone-2)" stroke-width=".8"/></svg>Négoce<small>Apprenti · 1 pt</small></dt><dd>+100</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 11h15v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4Z" fill="currentColor"/><path d="M3.6 9.4h16.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4.5 12.5H2.2M19.5 12.5h2.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9 7c-.8-1.2.8-2-.1-3.4M12 7c-.8-1.2.8-2-.1-3.4M15 7c-.8-1.2.8-2-.1-3.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>Cuisine<small>Apprenti · 1 pt</small></dt><dd>+100</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <dl class="stats rows">
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.6a2.1 2.1 0 0 1 2.1-2.1h8.2a2.7 2.7 0 0 1 2.7 2.7v4.6a5 5 0 0 1-5 5H10.6a4.1 4.1 0 0 1-4.1-4.1Z" fill="currentColor"/><path d="M10.3 7.8v3.6M13.2 7.8v3.6M16.1 7.8v3.6M6.8 13.2h5.6" fill="none" style="stroke:var(--stone-2)" stroke-width="1" stroke-linecap="round"/><path d="M9.6 19.6h5.6v2.6H9.6Z" fill="currentColor"/></svg>Poings (monial)</dt><dd class="rank">Spécialiste</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.4 9.2c2.9-.1 4.3 2.1 4 5.2-.3 2.9-1.2 4.3-1.3 6-.1 1.4-1.1 2.3-2.6 2.3-1.9 0-2.8-1.3-2.8-3.1 0-2 .9-3.3.8-5.3-.2-2.8.6-5.1 1.9-5.1Z" fill="currentColor"/><circle cx="10.4" cy="6.6" r="1.45" fill="currentColor"/><circle cx="12.9" cy="5.3" r="1.25" fill="currentColor"/><circle cx="15.1" cy="5.6" r="1.05" fill="currentColor"/><circle cx="16.8" cy="6.9" r=".9" fill="currentColor"/><circle cx="17.9" cy="8.7" r=".75" fill="currentColor"/></svg>Jambes (monial)</dt><dd class="rank">Spécialiste</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9.6" y="2.2" width="3.2" height="19.6" rx="1.4" fill="currentColor"/><path d="M12.6 7.4h4.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><rect x="15.6" y="7.4" width="2.4" height="5.2" rx="1.1" fill="currentColor"/></svg>Tonfa</dt><dd class="rank">Amateur</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.6" cy="9" r="2.2"/><circle cx="10" cy="9" r="2.2"/><circle cx="14.4" cy="9" r="2.2"/><circle cx="18.8" cy="9" r="2.2"/></g><path d="M3.6 12.4h17.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5.2 12.6c.6 4 3.3 6.4 6.8 6.4s6.2-2.4 6.8-6.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Armes-poings</dt><dd class="rank">Amateur</dd></div>
+      </dl>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Résistance</h3>
+        <ul class="tagged">
+          <li><span class="tag plus-tag">+300</span>Mental d'acier</li>
+        </ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="tagged">
+          <li><span class="tag minus-tag">−300</span>Les coups utilisant beaucoup d'éther peuvent le fatiguer rapidement et, sans potion, nécessiter du repos et/ou entraîner une baisse de la condition physique.</li>
+          <li><span class="tag minus-tag">−300</span>Sensibilité aux odeurs nauséabondes et à la banane&nbsp;: entraîne a minima des réflexes vomitifs et au maximum des vomissements et des maux de tête.</li>
+          <li><span class="tag minus-tag">−300</span>Si des équipiers ou des personnes vulnérables sont en danger, il prendra les risques nécessaires à leur sauvetage et ne fuira pas.</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <a href="galerie/eoor-1.jpg"><img src="galerie/eoor-1.jpg" alt="Eoor torse nu sur une terrasse en bois, au soleil" loading="lazy"></a>
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div class="fiche" data-char="unegen" hidden>
+<header class="hero">
+  <h1>Unegen <span class="surname">Haragin</span></h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <svg class="band" viewBox="0 0 240 26" aria-hidden="true"><path d="M30 13h72M138 13h72" stroke="#a9d4e6" stroke-opacity=".5" stroke-width="1"/><circle cx="30" cy="13" r="2" fill="#c79a4a"/><circle cx="210" cy="13" r="2" fill="#c79a4a"/><g fill="none" stroke="#c79a4a" stroke-width="1.6"><path d="M120 3c7 6 7 14 0 20M120 3c-7 6-7 14 0 20"/><path d="M110 19c3-9 11-12 20-9M130 19c-3-9-11-12-20-9"/><circle cx="120" cy="14.5" r="5.2" stroke="#a9d4e6" stroke-opacity=".8"/></g></svg>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation d'Unegen viendra ici.</p>
+  <aside class="today" data-mood="unegen" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><a class="music-link" href="https://www.youtube.com/watch?v=6NZzjs3_VwY" target="_blank" rel="noopener">Écouter sur YouTube</a></p>
+</header>
+
+<main>
+  <section id="u-identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait">
+        <div class="portrait-empty">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"/></svg>
+          <span>Capture d'écran d'Unegen</span>
+        </div>
+      </figure>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd>Xaela</dd></div>
+        <div><dt>Âge</dt><dd><span class="todo">À compléter</span><small>Né le 12<sup>e</sup> soleil de la 6<sup>e</sup> lune ombrale</small></dd></div>
+        <div><dt>Origine</dt><dd>Tribu des Haragin · Steppe d'Azim</dd></div>
+        <div><dt>Métier</dt><dd>Rôdeur chasseur<br>Aventurier</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="u-apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="u-caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="u-activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="u-relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="u-fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b class="todo">—</b></li>
+      <li><span>Points de destin</span><b class="todo">—</b></li>
+      <li><span>Équipement</span><b class="todo">—</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd class="todo">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Bonus de combat</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="u-galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div class="fiche" data-char="tamachag" hidden>
+<header class="hero">
+  <h1>Tamachag <span class="surname">Khurdan</span></h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <svg class="tri" viewBox="0 0 34 22"><g stroke="#b9785a" stroke-width="1" stroke-linejoin="round"><path d="M2 5h8l-4 9Z" fill="#5e4232"/><path d="M12 3h10l-5 15Z" fill="#c9ae8f"/><path d="M24 5h8l-4 9Z" fill="#5e4232"/></g></svg>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation de Tamachag viendra ici.</p>
+  <aside class="today" data-mood="tamachag" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><span class="music-link todo">Lien à venir</span></p>
+</header>
+
+<main>
+  <section id="t-identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait bare">
+        <img src="tamachag-portrait.jpg" alt="Tamachag sous un ciel étoilé">
+      </figure>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd>Xaela</dd></div>
+        <div><dt>Âge</dt><dd><span class="age" data-born="1990-11-16">35</span> ans<small>Né le 16<sup>e</sup> soleil de la 6<sup>e</sup> lune astrale (Lune de la mésange)</small></dd></div>
+        <div><dt>Origine</dt><dd>Tribu des Khurdans · Steppe d'Azim</dd></div>
+        <div><dt>Fonction</dt><dd>Khan Khurdan</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="t-apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="t-caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="t-activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="t-relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li><strong><span class="heart" aria-hidden="true">♥</span> Taiga Khurdan</strong><small>Femme et complice</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li><strong><svg class="monk" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.3" r="2.4" fill="currentColor"/><path d="M8.8 8.2h6.4l-.6 8.4H9.4Z" fill="currentColor"/><path d="M9.4 8.8C7.6 10.6 6.5 13.2 5.6 15.9M14.6 8.8c1.8 1.8 2.9 4.4 3.8 7.1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.2 17.4c3.6-2.6 7.7-2.3 11.6.6-4 1.9-8 1.8-11.6-.6Z" fill="currentColor"/><path d="M21.8 17.4c-3.6-2.6-7.7-2.3-11.6.6 4 1.9 8 1.8 11.6-.6Z" fill="currentColor" style="stroke:var(--stone);stroke-width:.9"/><circle cx="5.5" cy="16.2" r="1.15" fill="currentColor"/><circle cx="18.5" cy="16.2" r="1.15" fill="currentColor"/></svg> Davaajav Kha</strong><small>Meilleur ami</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people companions"><li><strong><svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9.4 1.6 6.6c.9 3 3.1 4.8 6 5.3l-3 1.2c2 1.5 4.4 1.8 6.4.9l-.6 3.4-1.7 3h6.6l-1.7-3-.6-3.4c2 .9 4.4.6 6.4-.9l-3-1.2c2.9-.5 5.1-2.3 6-5.3Z"/><circle cx="12" cy="7.6" r="2.1"/><path d="M13.6 7.2l2 .9-2 .7Z"/></svg> Oyunchimeg</strong><small>Rapace</small></li><li><strong><svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 21.6c-.2-3.6.6-6.4 2-8.6l-4.4.5C4.3 13.6 3.2 12.8 3.3 11.5c0-.8.5-1.4 1.1-1.8l5.9-4.6.5-2.6 2.1 1.9c3.9.3 6.9 3.6 6.9 8.4 0 3.4-.9 6.3-1.6 8.8Z"/><circle cx="10.4" cy="8.6" r=".9" style="fill:var(--stone)"/><path d="M13.6 4.6c2 .6 3.6 2.4 4.2 4.8M15 4.2c2.4.9 3.9 3.1 4.2 5.6" fill="none" style="stroke:var(--stone)" stroke-width=".8" stroke-linecap="round"/></svg> Ayalal</strong><small>Cheval</small></li><li><strong><svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 15c0-3.1 2.5-4.9 5.2-4.9s5.2 1.8 5.2 4.9c0 2.9-2.1 5.4-5.2 5.4S6.8 17.9 6.8 15Z"/><circle cx="4.9" cy="10.2" r="1.6"/><circle cx="7.6" cy="6.9" r="1.7"/><circle cx="12" cy="5.5" r="1.8"/><circle cx="16.4" cy="6.9" r="1.7"/><circle cx="19.1" cy="10.2" r="1.6"/><path d="M4.2 8.3l.4-1.3.7 1.2M7 4.9l.5-1.4.8 1.3M11.5 3.4l.5-1.4.5 1.4M15.7 4.8l.8-1.3.5 1.4M18.7 8.2l.7-1.2.4 1.3"/></svg> Duulakh</strong><small>Ours</small></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="t-fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b>8</b></li>
+      <li><span>Points de destin</span><b>0</b></li>
+      <li><span>Équipement</span><b>Intermédiaire</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd>+150<small>2 + 1 pts</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd>+200<small>2 + 2 pts</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd>0<small>0 pt</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd>+100<small>2 pts</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd>+50<small>1 pt</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd>0<small>0 pt</small></dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd>+150<small>3 pts</small></dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <dl class="stats rows">
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><g transform="rotate(180 12 12)"><path d="M5.2 4.2v8.3a6.8 6.8 0 0 0 13.6 0V4.2" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/><g style="fill:var(--stone-2)"><circle cx="5.2" cy="7" r=".7"/><circle cx="5.2" cy="10.6" r=".7"/><circle cx="18.8" cy="7" r=".7"/><circle cx="18.8" cy="10.6" r=".7"/><circle cx="7.4" cy="16.6" r=".7"/><circle cx="16.6" cy="16.6" r=".7"/></g></g></svg>Archer-cavalier<small>Spécialiste · 3 pts</small></dt><dd>+500</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.4 3.5h15.2a2 2 0 0 1 2 2v9.2a2 2 0 0 1-2 2H11l-5 4.3v-4.3H4.4a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z" fill="currentColor"/><path d="M12 6.4v4.6" style="stroke:var(--stone-2)" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="13.6" r="1.1" style="fill:var(--stone-2)"/></svg>Charisme et intimidation<small>Spécialiste · 3 pts</small></dt><dd>+500</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 2.6v19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6.3 3.6h12.9l-3 4.2 3 4.2H6.3Z" fill="currentColor"/><circle cx="5.4" cy="2.2" r="1.2" fill="currentColor"/></svg>Leader<small>Spécialiste · 3 pts</small></dt><dd>+500</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.2C9.4 4.4 6 4 2.6 4.6v13.6c3.4-.6 6.8-.2 9.4 1.6Z" fill="currentColor"/><path d="M12 6.2c2.6-1.8 6-2.2 9.4-1.6v13.6c-3.4-.6-6.8-.2-9.4 1.6Z" fill="currentColor"/><path d="M12 6.2v13.6" style="stroke:var(--stone-2)" stroke-width="1"/><path d="M5 8.4c1.6-.2 3.1 0 4.6.6M5 11.4c1.6-.2 3.1 0 4.6.6M14.4 9c1.5-.6 3-.8 4.6-.6M14.4 12c1.5-.6 3-.8 4.6-.6" fill="none" style="stroke:var(--stone-2)" stroke-width=".8" stroke-linecap="round"/></svg>Connaissance de l'histoire et de la culture<small>Amateur · 2 pts</small></dt><dd>+300</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 21.2 15.6 5.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12.4 6.2 15.4 2l2 1.3c2.8.1 4.6 2.3 4.2 5.5-2.3-.5-4 0-5.1.9Z" fill="currentColor"/></svg>Travail du bois<small>Amateur · 2 pts</small></dt><dd>+300</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.8 12C4.4 7.4 8 5.2 12 5.2s7.6 2.2 10.2 6.8c-2.6 4.6-6.2 6.8-10.2 6.8S4.4 16.6 1.8 12Z" fill="currentColor"/><circle cx="12" cy="12" r="3.9" style="fill:var(--stone-2)"/><circle cx="12" cy="12" r="1.9" fill="currentColor"/></svg>Perception spatiale<small>Apprenti · racial</small></dt><dd>+100</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <dl class="stats rows">
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c8.5 4 8.5 14 0 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 3v18" stroke="currentColor" stroke-width=".9"/><path d="M3.5 12h15M15.8 9.4 18.6 12l-2.8 2.6M5.5 10.4 3.5 12l2 1.6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Arc</dt><dd>+500</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17.3C11 13.6 15 9 20.6 3c.4 5.6-4.6 11.3-11.8 16.2Z" fill="currentColor"/><path d="M4.6 15.6l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6.3 18.3 3 21.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Peidao et épées courbées</dt><dd>+500</dd></div>
+        <div class="stat"><dt><svg class="wicon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5.4" fill="none" stroke="currentColor" stroke-width=".8"/><circle cx="12" cy="12" r="2.1" fill="currentColor"/></svg>Bouclier</dt><dd>+300</dd></div>
+      </dl>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Bonus de combat</h3>
+        <ul class="tagged">
+          <li><span class="tag plus-tag">+1</span>Entraînement régulier (constitution)</li>
+          <li><span class="tag plus-tag"></span><span>15 ans d'expérience <span class="todo">(suite à compléter)</span></span></li>
+        </ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="tagged">
+          <li><span class="tag minus-tag">−300</span><span><b class="mod-name">Khurdans avant tout.</b> En tant que Khan, il se doit de prendre les risques les plus importants pour les Khurdans et décidera dans l'intérêt de la tribu avant le sien.</span></li>
+          <li><span class="tag minus-tag">−300</span><span><b class="mod-name">Colérique.</b> Il peut facilement s'emporter dans les situations qui ne vont pas dans son sens.</span></li>
+          <li><span class="tag minus-tag">−300</span><span><b class="mod-name">Taiga.</b> Pour sa femme, il serait prêt à prendre des risques inconsidérés et à agir avant de réfléchir, y compris dans des situations à hauts risques.</span></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="t-galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <a href="galerie/tamachag-1.jpg"><img src="galerie/tamachag-1.jpg" alt="Tamachag contemplant de nuit un campement de yourtes depuis une falaise" loading="lazy"></a>
+      <a href="galerie/tamachag-2.jpg"><img src="galerie/tamachag-2.jpg" alt="Tamachag assis sous une tente, enlacé par une Au Ra" loading="lazy"></a>
+      <a href="galerie/tamachag-3.jpg"><img src="galerie/tamachag-3.jpg" alt="Portrait de Tamachag en armure de fourrure et de pointes" loading="lazy"></a>
+      <a href="galerie/tamachag-4.jpg"><img src="galerie/tamachag-4.jpg" alt="Tamachag et une Au Ra allongés sur un tapis bleu et blanc" loading="lazy"></a>
+      <a href="galerie/tamachag-5.jpg"><img src="galerie/tamachag-5.jpg" alt="Tamachag aux côtés de sa monture noire sous des cerisiers en fleurs" loading="lazy"></a>
+      <a href="galerie/tamachag-6.jpg"><img src="galerie/tamachag-6.jpg" alt="Tamachag sous un ciel étoilé" loading="lazy"></a>
+      <a href="galerie/tamachag-7.jpg"><img src="galerie/tamachag-7.jpg" alt="Tamachag Khan, portrait titré" loading="lazy"></a>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div class="fiche" data-char="khokkutsai" hidden>
+<header class="hero">
+  <h1>Khokkutsai <span class="surname">Khurdan</span></h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <svg class="tri" viewBox="0 0 34 22"><g stroke="#b9785a" stroke-width="1" stroke-linejoin="round"><path d="M2 5h8l-4 9Z" fill="#5e4232"/><path d="M12 3h10l-5 15Z" fill="#c9ae8f"/><path d="M24 5h8l-4 9Z" fill="#5e4232"/></g></svg>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation de Khokkutsai viendra ici.</p>
+  <aside class="today" data-mood="khokkutsai" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><span class="music-link todo">Lien à venir</span></p>
+</header>
+
+<main>
+  <section id="k-identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait bare">
+        <img src="khokkutsai-portrait.jpg" alt="Portrait de Khokkutsai Khurdan">
+      </figure>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd>Xaela</dd></div>
+        <div><dt>Âge</dt><dd><span class="age" data-born="1997-02-27">29</span> ans<small>Né le 27<sup>e</sup> soleil de la 1<sup>re</sup> lune ombrale (Lune de la louve)</small></dd></div>
+        <div><dt>Origine</dt><dd>Tribu des Khurdans · Steppe d'Azim</dd></div>
+        <div><dt>Fonction</dt><dd>Élite<br>Guerrier<br>Administrateur de l'iloh</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="k-apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="k-caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="k-activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people"><li><strong>Khurdan Iloh</strong><small>Tous les jours</small></li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="k-relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li><strong><span class="heart" aria-hidden="true">♥</span> Inkaraa Khurdan</strong><small>Fiancée</small></li>
+          <li><strong><svg class="broken" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 3.4 12.6C1 10.2 1.4 6.3 4.3 4.7 6.9 3.3 10 4.2 12 6.6c2-2.4 5.1-3.3 7.7-1.9 2.9 1.6 3.3 5.5.9 7.9Z"/><path d="M12 6.4 10.4 10l2.6 2.6-2 3.4 1 5" fill="none" style="stroke:var(--stone)" stroke-width="1.5" stroke-linejoin="round"/></svg> Javkhaanhun Khurdan</strong><small>Ancienne amante</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li><strong>Bator Khurdan</strong><small>Père · chasseur · environ 55 ans</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li><strong><svg class="monk" viewBox="0 0 24 24" aria-hidden="true"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M4 20 19.5 4.5M20 20 4.5 4.5"/><path d="M15.6 4.2h4.2v4.2M8.4 4.2H4.2v4.2"/><path d="M4 20l2.6-.4M4 20l.4-2.6M6.2 21.2l1.8-1.8M2.8 17.8l1.8-1.8M20 20l-2.6-.4M20 20l-.4-2.6M17.8 21.2 16 19.4M21.2 17.8l-1.8-1.8"/></g></svg> Ankhbayar Khurdan</strong><small>Ami d'enfance</small></li>
+          <li><strong><svg class="monk" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 20.4 16.4 7.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M15.6 8.4c.3-2.9 2.3-5.3 5.8-5.8-.5 3.5-2.9 5.5-5.8 5.8Z" fill="currentColor"/><path d="M14.2 8.2l1.6 1.6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M14 10.6l-1.6 3M15.4 11.2l-.9 2.6" stroke="currentColor" stroke-width=".9" stroke-linecap="round"/><circle cx="3.6" cy="20.4" r="1.3" fill="currentColor"/></svg> Batbayar Khurdan</strong><small>Ami d'entraînement et de boisson</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="k-fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b class="todo">—</b></li>
+      <li><span>Points de destin</span><b class="todo">—</b></li>
+      <li><span>Équipement</span><b class="todo">—</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd class="todo">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Bonus de combat</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="k-galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div class="fiche" data-char="ankhbayar" hidden>
+<header class="hero">
+  <h1>Ankhbayar <span class="surname">Khurdan</span></h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <svg class="tri" viewBox="0 0 34 22"><g stroke="#b9785a" stroke-width="1" stroke-linejoin="round"><path d="M2 5h8l-4 9Z" fill="#5e4232"/><path d="M12 3h10l-5 15Z" fill="#c9ae8f"/><path d="M24 5h8l-4 9Z" fill="#5e4232"/></g></svg>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation d'Ankhbayar viendra ici.</p>
+  <aside class="today" data-mood="ankhbayar" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><span class="music-link todo">Lien à venir</span></p>
+</header>
+
+<main>
+  <section id="a-identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait bare">
+        <img src="ankhbayar-portrait.jpg" alt="Portrait d'Ankhbayar Khurdan">
+      </figure>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd>Xaela</dd></div>
+        <div><dt>Âge</dt><dd><span class="age" data-born="1998-08-22">28</span> ans<small>Né le 22<sup>e</sup> soleil de la 4<sup>e</sup> lune ombrale (Lune de la loutre)</small></dd></div>
+        <div><dt>Origine</dt><dd>Tribu des Khurdans · Steppe d'Azim</dd></div>
+        <div><dt>Fonction</dt><dd>Chasseur</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="a-apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="a-caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="a-activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people"><li><strong>Khurdan Iloh</strong><small>Tous les jours</small></li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="a-relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li><strong><span class="heart" aria-hidden="true">♥</span> Khubunjin</strong><small>Idylle naissante</small></li>
+          <li><strong><svg class="broken" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 3.4 12.6C1 10.2 1.4 6.3 4.3 4.7 6.9 3.3 10 4.2 12 6.6c2-2.4 5.1-3.3 7.7-1.9 2.9 1.6 3.3 5.5.9 7.9Z"/><path d="M12 6.4 10.4 10l2.6 2.6-2 3.4 1 5" fill="none" style="stroke:var(--stone)" stroke-width="1.5" stroke-linejoin="round"/></svg> ???</strong><small>Histoire pour un autre temps</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li><strong><svg class="monk" viewBox="0 0 24 24" aria-hidden="true"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M4 20 19.5 4.5M20 20 4.5 4.5"/><path d="M15.6 4.2h4.2v4.2M8.4 4.2H4.2v4.2"/><path d="M4 20l2.6-.4M4 20l.4-2.6M6.2 21.2l1.8-1.8M2.8 17.8l1.8-1.8M20 20l-2.6-.4M20 20l-.4-2.6M17.8 21.2 16 19.4M21.2 17.8l-1.8-1.8"/></g></svg> Khokkutsai Khurdan</strong><small>Ami d'enfance</small></li>
+          <li><strong><svg class="monk" viewBox="0 0 24 24" aria-hidden="true"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M4 20 19.5 4.5M20 20 4.5 4.5"/><path d="M15.6 4.2h4.2v4.2M8.4 4.2H4.2v4.2"/><path d="M4 20l2.6-.4M4 20l.4-2.6M6.2 21.2l1.8-1.8M2.8 17.8l1.8-1.8M20 20l-2.6-.4M20 20l-.4-2.6M17.8 21.2 16 19.4M21.2 17.8l-1.8-1.8"/></g></svg> Tengis Khurdan</strong><small>Ami d'enfance</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="a-fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b class="todo">—</b></li>
+      <li><span>Points de destin</span><b class="todo">—</b></li>
+      <li><span>Équipement</span><b class="todo">—</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd class="todo">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Bonus de combat</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="a-galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div class="fiche" data-char="tengis" hidden>
+<header class="hero">
+  <h1>Tengis <span class="surname">Khurdan</span></h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <svg class="tri" viewBox="0 0 34 22"><g stroke="#b9785a" stroke-width="1" stroke-linejoin="round"><path d="M2 5h8l-4 9Z" fill="#5e4232"/><path d="M12 3h10l-5 15Z" fill="#c9ae8f"/><path d="M24 5h8l-4 9Z" fill="#5e4232"/></g></svg>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation de Tengis viendra ici.</p>
+  <aside class="today" data-mood="tengis" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><span class="music-link todo">Lien à venir</span></p>
+</header>
+
+<main>
+  <section id="g-identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait">
+        <div class="portrait-empty">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"/></svg>
+          <span>Capture d'écran de Tengis</span>
+        </div>
+      </figure>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd>Xaela</dd></div>
+        <div><dt>Âge</dt><dd><span class="age" data-born="1997-06-04">29</span> ans<small>Né le 4<sup>e</sup> soleil de la 3<sup>e</sup> lune ombrale</small></dd></div>
+        <div><dt>Origine</dt><dd>Tribu des Khurdans · Steppe d'Azim</dd></div>
+        <div><dt>Fonction</dt><dd>Voyageur de retour</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="g-apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="g-caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="g-activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="g-relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li><strong><svg class="monk" viewBox="0 0 24 24" aria-hidden="true"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M4 20 19.5 4.5M20 20 4.5 4.5"/><path d="M15.6 4.2h4.2v4.2M8.4 4.2H4.2v4.2"/><path d="M4 20l2.6-.4M4 20l.4-2.6M6.2 21.2l1.8-1.8M2.8 17.8l1.8-1.8M20 20l-2.6-.4M20 20l-.4-2.6M17.8 21.2 16 19.4M21.2 17.8l-1.8-1.8"/></g></svg> Ankhbayar Khurdan</strong><small>Ami d'enfance</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="g-fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b class="todo">—</b></li>
+      <li><span>Points de destin</span><b class="todo">—</b></li>
+      <li><span>Équipement</span><b class="todo">—</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd class="todo">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Bonus de combat</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="g-galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div class="fiche" data-char="davaajav" hidden>
+<header class="hero">
+  <h1>Davaajav <span class="surname">Kha</span></h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <svg class="tri" viewBox="0 0 34 22"><g stroke="#d0483d" stroke-width="1" stroke-linejoin="round"><path d="M2 5h8l-4 9Z" fill="#0b0a0b"/><path d="M12 3h10l-5 15Z" fill="#b8241f"/><path d="M24 5h8l-4 9Z" fill="#0b0a0b"/></g></svg>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation de Davaajav viendra ici.</p>
+  <aside class="today" data-mood="davaajav" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><span class="music-link todo">Lien à venir</span></p>
+</header>
+
+<main>
+  <section id="d-identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait bare">
+        <img src="davaajav-portrait.jpg" alt="Portrait de Davaajav Kha">
+      </figure>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd>Xaela</dd></div>
+        <div><dt>Âge</dt><dd><span class="age" data-born="1991-02-08">35</span> ans<small>Né le 8<sup>e</sup> soleil de la 1<sup>re</sup> lune ombrale</small></dd></div>
+        <div><dt>Origine</dt><dd>Tribu des Kha · Steppe d'Azim</dd></div>
+        <div><dt>Métier</dt><dd>Archéologue indépendant<br>Explorateur</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="d-apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="d-caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="d-activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people"><li><strong>La Coupe</strong><small>Tous les jours</small></li>
+          <li><strong>Ul'dah</strong><small>Tous les jours</small></li>
+          <li><strong>Khurdan Iloh</strong><small>Plusieurs fois dans l'année</small></li>
+          <li><strong>Ralliement</strong><small>Ponctuellement</small></li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="d-relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li><strong><span class="heart" aria-hidden="true">♥</span> Ushuaia Baijeshri</strong><small>Compagne</small></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li><strong>Tamachag Khurdan</strong></li>
+          <li><strong>Taiga Khurdan</strong></li>
+          <li><strong>Walha Blacksand</strong></li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="d-fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b class="todo">—</b></li>
+      <li><span>Points de destin</span><b class="todo">—</b></li>
+      <li><span>Équipement</span><b class="todo">—</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd class="todo">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Bonus de combat</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="d-galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div class="fiche" data-char="viggo" hidden>
+<header class="hero">
+  <h1>Viggo</h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <svg class="band" viewBox="0 0 60 14" aria-hidden="true"><path d="M0 7h6l4-5 4 5h4" fill="none" stroke="#c4572e" stroke-width="1.4"/><path d="M42 7h4l4-5 4 5h6" fill="none" stroke="#c4572e" stroke-width="1.4"/><path d="M30 1l6 6-6 6-6-6Z" fill="#3fb8a8"/><path d="M30 4.5l2.5 2.5-2.5 2.5-2.5-2.5Z" fill="#17120e"/><path d="M20 7l2.5-2.5L25 7l-2.5 2.5ZM35 7l2.5-2.5L40 7l-2.5 2.5Z" fill="#e8d8bd"/></svg>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation de Viggo viendra ici.</p>
+  <aside class="today" data-mood="viggo" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><span class="music-link todo">Lien à venir</span></p>
+</header>
+
+<main>
+  <section id="v-identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait">
+        <div class="portrait-empty">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"/></svg>
+          <span>Capture d'écran de Viggo</span>
+        </div>
+      </figure>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd>Rava</dd></div>
+        <div><dt>Âge</dt><dd><span class="age" data-born="1903-05-22">123</span> ans<small>Né le 22<sup>e</sup> soleil de la 3<sup>e</sup> lune astrale</small></dd></div>
+        <div><dt>Origine</dt><dd>Dalmasca</dd></div>
+        <div><dt>Métier</dt><dd class="todo">À compléter</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="v-apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="v-caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="v-activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="v-fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b class="todo">—</b></li>
+      <li><span>Points de destin</span><b class="todo">—</b></li>
+      <li><span>Équipement</span><b class="todo">—</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd class="todo">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Bonus de combat</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="v-galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+<div class="fiche" data-char="echo" hidden>
+<header class="hero">
+  <h1>Echo</h1>
+  <div class="ornament" aria-hidden="true">
+    <span></span>
+    <b class="glyph">◈</b>
+    <span></span>
+  </div>
+  <p class="epithet todo">Une phrase d'accroche ou une citation d'Echo viendra ici.</p>
+  <aside class="today" data-mood="echo" aria-label="Mood du jour">
+    <p class="today-label">Aujourd'hui</p>
+    <p class="today-mood todo">À définir</p>
+    <ul class="today-acts" hidden></ul>
+    <p class="today-meta" hidden></p>
+  </aside>
+  <p class="music"><span class="music-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.2l11-2.2v12.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="6.4" cy="17.6" rx="2.8" ry="2.2"/><ellipse cx="17.4" cy="15.3" rx="2.8" ry="2.2"/></svg>Mood musical</span><span class="music-link todo">Lien à venir</span></p>
+</header>
+
+<main>
+  <section id="e-identite" class="identity">
+    <div class="portrait-col">
+      <figure class="portrait">
+        <div class="portrait-empty">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"/></svg>
+          <span>Capture d'écran d'Echo</span>
+        </div>
+      </figure>
+    </div>
+    <div class="identity-text">
+      <h2>Identité</h2>
+      <dl class="facts">
+        <div><dt>Race</dt><dd class="todo">À compléter</dd></div>
+        <div><dt>Âge</dt><dd><span class="todo">À compléter</span><small>Né le 16<sup>e</sup> soleil de la 2<sup>e</sup> lune astrale</small></dd></div>
+        <div><dt>Origine</dt><dd class="todo">À compléter</dd></div>
+        <div><dt>Métier</dt><dd class="todo">À compléter</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="e-apparence">
+    <h2>Apparence</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="e-caractere">
+    <h2>Caractère</h2>
+    <p class="todo">À compléter.</p>
+  </section>
+
+  <section id="e-activites">
+    <h2>Activités</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Passions et engagements</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Lieux fréquentés</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Ce qu'on raconte</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="e-relations">
+    <h2>Relations</h2>
+    <div class="subgroups">
+      <div class="subgroup">
+        <h3>Amours</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Famille</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Amitiés</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup">
+        <h3>Professionnelles</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="subgroup wide">
+        <h3>Compagnons</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <details id="e-fiche" class="sheet">
+    <summary>
+      <span class="summary-title">Fiche de jeu</span>
+      <span class="summary-hint">Cliquer pour révéler</span>
+    </summary>
+    <div class="sheet-body">
+
+    <ul class="vitals">
+      <li><span>PV</span><b class="todo">—</b></li>
+      <li><span>Points de destin</span><b class="todo">—</b></li>
+      <li><span>Équipement</span><b class="todo">—</b></li>
+    </ul>
+
+    <div class="sheet-block">
+      <h3>Statistiques</h3>
+      <dl class="stats">
+        <div class="stat"><dt><i class="sw" style="--c:#4f7fe0"></i>Constitution</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e0794f"></i>Force</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#9bc46a"></i>Dextérité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#e3a24f"></i>Agilité</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#a08ee6"></i>Intelligence</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#8cc8d0"></i>Érudisme</dt><dd class="todo">—</dd></div>
+        <div class="stat"><dt><i class="sw" style="--c:#d98aab"></i>Charisme</dt><dd class="todo">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Compétences</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Maîtrises d'arme</h3>
+      <ul class="people"><li class="todo">À compléter</li></ul>
+    </div>
+
+    <div class="mods">
+      <div class="sheet-block">
+        <h3 class="plus">Bonus de combat</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+      <div class="sheet-block">
+        <h3 class="minus">Malus</h3>
+        <ul class="people"><li class="todo">À compléter</li></ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <section id="e-galerie">
+    <h2>Galerie</h2>
+    <!-- Ajouter une image : <a href="galerie/image1.jpg"><img src="galerie/image1.jpg" alt="Description courte"></a> -->
+    <div class="carousel">
+    <div class="gallery" tabindex="0" aria-label="Galerie d'images">
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+      <div class="shot-empty">Image à venir</div>
+    </div>
+    <div class="car-ctrl">
+      <button type="button" class="car-btn car-prev" aria-label="Images précédentes">‹</button>
+      <button type="button" class="car-btn car-next" aria-label="Images suivantes">›</button>
+    </div>
+    </div>
+  </section>
+</main>
+</div>
+
+
+<dialog id="lightbox" aria-label="Image agrandie">
+  <button type="button" class="lb-close" aria-label="Fermer">×</button>
+  <button type="button" class="lb-nav lb-prev" aria-label="Image précédente">‹</button>
+  <img alt="">
+  <button type="button" class="lb-nav lb-next" aria-label="Image suivante">›</button>
+</dialog>
+
+<script>
+(() => {
+  const all = [...document.querySelectorAll('.gallery a')];
+  const box = document.getElementById('lightbox');
+  if (!all.length || !box || !box.showModal) return;
+  const img = box.querySelector('img');
+  let links = [], i = 0;
+  const show = n => {
+    i = (n + links.length) % links.length;
+    img.src = links[i].href;
+    img.alt = links[i].querySelector('img')?.alt || '';
+  };
+  all.forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    links = [...a.closest('.gallery').querySelectorAll('a')];
+    box.querySelectorAll('.lb-nav').forEach(b => b.hidden = links.length < 2);
+    show(links.indexOf(a)); box.showModal();
+  }));
+  box.querySelector('.lb-close').onclick = () => box.close();
+  box.querySelector('.lb-prev').onclick = () => show(i - 1);
+  box.querySelector('.lb-next').onclick = () => show(i + 1);
+  box.addEventListener('click', e => { if (e.target === box) box.close(); });
+  box.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') show(i - 1);
+    if (e.key === 'ArrowRight') show(i + 1);
+  });
+})();
+</script>
+
+
+<script>
+(() => {
+  const chars = { eoor: 'Eoor Silvershard', tamachag: 'Tamachag Khurdan', khokkutsai: 'Khokkutsai Khurdan', ankhbayar: 'Ankhbayar Khurdan', tengis: 'Tengis Khurdan', davaajav: 'Davaajav Kha', echo: 'Echo', viggo: 'Viggo', unegen: 'Unegen Haragin' };
+  const khurdanTheme = ['tamachag', 'khokkutsai', 'ankhbayar', 'tengis', 'davaajav'];
+  const root = document.documentElement;
+  const show = (id, scroll) => {
+    if (!chars[id]) id = 'eoor';
+    document.querySelectorAll('.fiche').forEach(f => f.hidden = f.dataset.char !== id);
+    root.classList.toggle('t-tamachag', khurdanTheme.includes(id));
+    root.classList.toggle('t-kha', id === 'davaajav');
+    root.classList.toggle('t-echo', id === 'echo');
+    root.classList.toggle('t-viggo', id === 'viggo');
+    root.classList.toggle('t-unegen', id === 'unegen');
+    document.querySelectorAll('.cast a').forEach(a => {
+      if (a.dataset.char === id) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    document.title = chars[id];
+    const cur = document.querySelector('.cast a[aria-current="page"]');
+    const bar = document.querySelector('.cast ul');
+    if (cur && bar) bar.scrollTo({ left: cur.parentElement.offsetLeft - (bar.clientWidth - cur.parentElement.offsetWidth) / 2 });
+    if (scroll) window.scrollTo(0, 0);
+  };
+  document.querySelectorAll('.cast a').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.dataset.char;
+    try { history.replaceState(null, '', '#' + id); } catch (_) {}
+    show(id, true);
+  }));
+  window.addEventListener('hashchange', () => show(location.hash.slice(1), true));
+  show(location.hash.slice(1), false);
+})();
+</script>
+
+<script>
+// Âge calculé automatiquement à partir de la date de naissance (date réelle)
+(() => {
+  const now = new Date();
+  document.querySelectorAll('.age[data-born]').forEach(el => {
+    const [y, m, d] = el.dataset.born.split('-').map(Number);
+    let age = now.getFullYear() - y;
+    if (now.getMonth() + 1 < m || (now.getMonth() + 1 === m && now.getDate() < d)) age--;
+    el.textContent = age;
+  });
+})();
+</script>
+
+<script>
+// Mood du jour : affiché tel quel s'il a été mis à jour il y a moins de 2 jours,
+// sinon « À définir ». À brancher sur l'application (Firebase) plus tard :
+// il suffira d'appeler showMood('eoor', { mood, activities, updatedAt }).
+window.showMood = (char, data) => {
+  const box = document.querySelector('.today[data-mood="' + char + '"]');
+  if (!box) return;
+  const moodEl = box.querySelector('.today-mood');
+  const actsEl = box.querySelector('.today-acts');
+  const metaEl = box.querySelector('.today-meta');
+  const TWO_DAYS = 2 * 24 * 60 * 60 * 1000;
+  const updated = data && data.updatedAt ? new Date(data.updatedAt) : null;
+  const fresh = updated && !isNaN(updated) && (Date.now() - updated.getTime()) < TWO_DAYS;
+  if (!fresh || !data.mood) {
+    moodEl.textContent = 'À définir';
+    moodEl.classList.add('todo');
+    actsEl.hidden = true;
+    metaEl.hidden = true;
+    return;
+  }
+  moodEl.textContent = '« ' + data.mood + ' »';
+  moodEl.classList.remove('todo');
+  actsEl.replaceChildren(...(data.activities || []).map(a => {
+    const li = document.createElement('li'); li.textContent = a; return li;
+  }));
+  actsEl.hidden = !(data.activities && data.activities.length);
+  metaEl.textContent = 'Mis à jour le ' + updated.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
+  metaEl.hidden = false;
+};
+// En attendant l'application : aucune donnée, donc « À définir ».
+['eoor', 'unegen', 'tamachag', 'khokkutsai', 'ankhbayar', 'tengis', 'davaajav', 'viggo', 'echo'].forEach(c => window.showMood(c, null));
+</script>
+
+<script>
+// Carrousels de la galerie : défilement en boucle
+document.querySelectorAll('.carousel').forEach(car => {
+  const track = car.querySelector('.gallery');
+  const ctrl = car.querySelector('.car-ctrl');
+  const prev = car.querySelector('.car-prev');
+  const next = car.querySelector('.car-next');
+  const atStart = () => track.scrollLeft <= 2;
+  const atEnd = () => track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  const update = () => {
+    if (!track.clientWidth) return;
+    ctrl.hidden = track.scrollWidth <= track.clientWidth + 2;  // tout tient : pas de flèches
+  };
+  next.addEventListener('click', () => {
+    if (atEnd()) track.scrollTo({ left: 0 });
+    else track.scrollBy({ left: track.clientWidth });
+  });
+  prev.addEventListener('click', () => {
+    if (atStart()) track.scrollTo({ left: track.scrollWidth });
+    else track.scrollBy({ left: -track.clientWidth });
+  });
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+  });
+  if ('ResizeObserver' in window) new ResizeObserver(update).observe(track);
+  update();
+});
+</script>
+
+<footer>Fiche de personnage · Final Fantasy XIV</footer>
+</body>
+</html>
