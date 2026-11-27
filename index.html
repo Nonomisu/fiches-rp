@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
+<meta name="build" content="20261127154348">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Personnages Nono</title>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -679,6 +680,18 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .t-tamachag h1 { font-weight: 700; letter-spacing: .04em; }
 .t-tamachag h1 .surname { font-weight: 700; }
 .ornament .tri { width: 34px; height: 22px; }
+
+/* ---- Bouton de mise à jour ---- */
+.update-btn{position:fixed;left:50%;bottom:calc(1rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,150%);
+  z-index:60;display:flex;align-items:center;gap:.55rem;max-width:calc(100% - 2rem);
+  padding:.7rem 1.15rem;border:1px solid var(--gold);border-radius:999px;cursor:pointer;
+  background:var(--stone-2);color:var(--sand);font:600 .95rem/1.2 var(--body);
+  box-shadow:0 6px 24px rgba(0,0,0,.55),0 0 0 4px var(--rule);opacity:0;pointer-events:none;
+  transition:transform .35s ease,opacity .35s ease}
+.update-btn.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.update-btn svg{width:1.15em;height:1.15em;flex:none;color:var(--gold)}
+.update-btn:hover,.update-btn:focus-visible{border-color:var(--sand);outline:none}
+@media (prefers-reduced-motion:reduce){.update-btn{transition:none}}
 </style>
 </head>
 <body>
@@ -2350,6 +2363,34 @@ document.querySelectorAll('.carousel').forEach(car => {
   if ('ResizeObserver' in window) new ResizeObserver(update).observe(track);
   update();
 });
+</script>
+
+<button type="button" class="update-btn" id="updateBtn" aria-live="polite">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg>
+  <span>Nouvelle version disponible · Mettre à jour</span>
+</button>
+<script>
+/* Vérifie régulièrement si la page a été mise à jour sur GitHub Pages ;
+   si oui, affiche un bouton qui recharge la page sans perdre la fiche ouverte. */
+(function(){
+  var btn=document.getElementById('updateBtn');
+  if(!/github\.io$/.test(location.hostname)) return;   // inactif dans l'aperçu Claude
+  var m=document.querySelector('meta[name="build"]'), mine=m?m.content:null, last=0, busy=false;
+  function ver(t){var r=/<meta name="build" content="([^"]+)"/.exec(t);return r?r[1]:null}
+  function check(){
+    var now=Date.now(); if(busy||now-last<60000) return; last=now; busy=true;
+    fetch(location.pathname+'?v='+now,{cache:'no-store'})
+      .then(function(r){return r.ok?r.text():null})
+      .then(function(t){
+        var v=t&&ver(t); if(v&&mine&&v!==mine) btn.classList.add('show');
+      }).catch(function(){}).then(function(){busy=false});
+  }
+  btn.addEventListener('click',function(){location.reload()});
+  check();
+  setInterval(function(){if(!document.hidden) check()},5*60000);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden) check()});
+  window.addEventListener('focus',check);
+})();
 </script>
 
 <footer>Fiche de personnage · Final Fantasy XIV</footer>
